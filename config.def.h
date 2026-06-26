@@ -1315,6 +1315,12 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_Left,       tagandviewtoleft,       {0} }, // note keybinding conflict with placedir
 	{ MODKEY|ControlMask,           XK_Right,      tagandviewtoright,      {0} }, // note keybinding conflict with placedir
 	#endif // FOCUSADJACENTTAG_PATCH
+	#if ADJACENTTAG_PATCH
+  { MODKEY,                       XK_Right,  viewnext,       {0} },
+  { MODKEY,                       XK_Left,   viewprev,       {0} },
+  { MODKEY|ShiftMask,             XK_Right,  tagtonext,      {0} },
+  { MODKEY|ShiftMask,             XK_Left,   tagtoprev,      {0} },
+	#endif // ADJACENTTAG_PATCH
 	#if TAGALL_PATCH
 	{ MODKEY|ShiftMask,             XK_F1,         tagall,                 {.v = "F1"} },
 	{ MODKEY|ShiftMask,             XK_F2,         tagall,                 {.v = "F2"} },

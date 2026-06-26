@@ -169,6 +169,9 @@
 #if FOCUSADJACENTTAG_PATCH
 #include "focusadjacenttag.h"
 #endif
+#if ADJACENTTAG_PATCH
+#include "adjacenttag.h"
+#endif
 #if FOCUSFOLLOWMOUSE_PATCH
 #include "focusfollowmouse.h"
 #endif
