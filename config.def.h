@@ -52,7 +52,7 @@ static const int showbar                 = 0;   /* 0 means no bar */
 #else
 static const int showbar                 = 1;   /* 0 means no bar */
 #endif // BAR_HOLDBAR_PATCH
-static const int topbar                  = 1;   /* 0 means bottom bar */
+static const int topbar                  = 0;   /* 0 means bottom bar */
 #if TAB_PATCH
 /*  Display modes of the tab bar: never shown, always shown, shown only in  */
 /*  monocle mode in the presence of several windows.                        */
@@ -172,7 +172,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 9";
 #else
-static const char *fonts[]               = { "monospace:size=9", "Ubuntu Nerd Font:size=9" };
+static const char *fonts[]               = { "monospace:size=9", "Ubuntu Nerd Font:size=9:pixelsize=18" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "Ubuntu Nerd Font:size=9";
 
@@ -915,9 +915,6 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
-static const char *upvol_cmd[]   = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
-static const char *downvol_cmd[] = { "/usr/bin/pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
-static const char *mutevol_cmd[] = { "/usr/bin/pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
 static const char *screenshot_cmd[] = { "sh", "-c", "scrot -f -e 'satty -f $f --fullscreen'", NULL };
 
 #if BAR_STATUSCMD_PATCH
@@ -1472,10 +1469,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                                  6)
 	TAGKEYS(                        XK_8,                                  7)
 	TAGKEYS(                        XK_9,                                  8)
-
-  { 0,                            XF86XK_AudioRaiseVolume, spawn,    {.v = upvol_cmd } },
-  { 0,                            XF86XK_AudioLowerVolume, spawn,    {.v = downvol_cmd } },
-  { 0,                            XF86XK_AudioMute,        spawn,    {.v = mutevol_cmd } },
 };
 
 #if KEYMODES_PATCH
