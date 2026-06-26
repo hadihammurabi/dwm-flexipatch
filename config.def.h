@@ -172,7 +172,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 9";
 #else
-static const char *fonts[]               = { "monospace:size=9", "Ubuntu Nerd Font:size=9:pixelsize=18" };
+static const char *fonts[]               = { "monospace:size=9", "Ubuntu Nerd Font:size=9:pixelsize=16" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "Ubuntu Nerd Font:size=9";
 
@@ -480,9 +480,9 @@ static char tagicons[][NUMTAGS][MAX_TAGLEN] =
 static char *tagicons[][NUMTAGS] =
 #endif // NAMETAG_PATCH
 {
-	[DEFAULT_TAGS]        = { "", "󰆁", "", "4", "5", "6", "7", "8", "9" },
-	[ALTERNATIVE_TAGS]    = { "A", "B", "C", "D", "E", "F", "G", "H", "I" },
-	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>", "<6>", "<7>", "<8>", "<9>" },
+	[DEFAULT_TAGS]        = { "", "󰆁", "", "4", "5" },
+	[ALTERNATIVE_TAGS]    = { "1", "2", "3", "4", "5" },
+	[ALT_TAGS_DECORATION] = { "<1>", "<2>", "<3>", "<4>", "<5>" },
 };
 
 #if BAR_TAGGRID_PATCH
