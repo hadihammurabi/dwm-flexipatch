@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-#include <X11/XF86keysym.h>
 #define XK_Print 0x0000ff61
 
 /* Helper macros for spawning commands */
@@ -172,7 +171,7 @@ static void (*bartabmonfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 9";
 #else
-static const char *fonts[]               = { "monospace:size=9", "Ubuntu Nerd Font:size=9:pixelsize=16" };
+static const char *fonts[]               = { "Ubuntu Nerd Font:size=9", "monospace:size=9" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "Ubuntu Nerd Font:size=9";
 
@@ -531,7 +530,7 @@ static const Rule rules[] = {
 	RULE(.class = "firefox", .tags = 0)
 	RULE(.class = "Telegram", .tags = 1 << 1)
 	RULE(.class = "Joplin", .tags = 1 << 1)
-	RULE(.class = "st", .tags = 1 << 2)
+	RULE(.class = "St", .tags = 1 << 2)
 	RULE(.class = "DBeaver", .tags = 1 << 2)
 	RULE(.class = "satty", .isfloating = 1)
 	#if RENAMED_SCRATCHPADS_PATCH
