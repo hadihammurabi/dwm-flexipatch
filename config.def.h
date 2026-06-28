@@ -527,7 +527,7 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "firefox", .tags = 0)
+	RULE(.class = "firefox", .instance="Navigator", .tags = 1)
 	RULE(.class = "Telegram", .tags = 1 << 1)
 	RULE(.class = "Joplin", .tags = 1 << 1)
 	RULE(.class = "St", .tags = 1 << 2)
@@ -914,7 +914,7 @@ static const char *dmenucmd[] = {
 	NULL
 };
 static const char *termcmd[]  = { "st", NULL };
-static const char *screenshot_cmd[] = { "sh", "-c", "scrot -f -e 'satty -f $f --fullscreen'", NULL };
+static const char *screenshot_cmd[] = { "sh", "-c", "scrot -e 'satty -f $f --fullscreen' -F /tmp/scrot.png && rm /tmp/scrot.png", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
